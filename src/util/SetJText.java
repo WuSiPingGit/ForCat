@@ -2,7 +2,9 @@ package util;
 
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
+/*
+ * 建立JText模块，计划主程序调用
+ */
 public class SetJText {
 	private SetJText() {}
     

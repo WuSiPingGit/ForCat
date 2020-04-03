@@ -5,13 +5,20 @@ import java.awt.GridBagLayout;
 import java.security.SecureClassLoader;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 import bean.SLC;
 import controller.AddLaodListener;
 import util.ForLaodWindow;
 import util.SetJFrame;
 import util.SetJPanel;;
-
+/*
+ * 建立登陆页面
+ */
 public class LaodWindows {
+	/*
+	 * 登陆页面布局及主窗口
+	 */
 	private static JFrame jf = new JFrame();
 	private static GridBagLayout forLaodJpanel = new GridBagLayout();
 	private static GridBagLayout forFogetJpanel = new GridBagLayout();
@@ -24,8 +31,9 @@ public class LaodWindows {
 		SLC.newUserJpanelTwo.setLayout(forUserJpanelTwo);
 		SLC.newUserJpanel.setLayout(forNewUserJpanel);
 		SLC.allJpanel.setLayout(forAllJpanel);
+        SLC.newUserJpanelOne.setLayout(forUserJpanelOne);
 		jf.add(SLC.allJpanel);
-		//
+		//加入监听器
 		SLC.newUser.addActionListener(new AddLaodListener.NewUserButtonListener());
 		SLC.fgc.addActionListener(new AddLaodListener.ForgetCiperButtonListener());
 		SLC.back.addActionListener(new AddLaodListener.GoToLaodButtonListener());
@@ -33,7 +41,9 @@ public class LaodWindows {
 		//
 		SLC.laodJpanel.setLayout(forLaodJpanel);
 		SLC.fogetCiperJpanel.setLayout(forFogetJpanel);
-//		 SLC.laodJpanel =	SetJPanel.setJPanelLauout(SLC.laodJpanel, false, 1, 0, 0, forLaodJpanel, SLC.showLOLLaod);
+		/*
+		 * 	登陆页面
+		 */
 		ForLaodWindow.forLaodJpanel(1, 1, 0, 0, SLC.showLOLLaod);
 		ForLaodWindow.forLaodJpanel(1, 0, 1, 0, SLC.count);
 		ForLaodWindow.forLaodJpanel(1, 0, 2, 0, SLC.ciper);
@@ -44,66 +54,56 @@ public class LaodWindows {
 		ForLaodWindow.forLaodJpanel(1, 0, 3, 1, SLC.newUser);
 		ForLaodWindow.forLaodJpanel(1, 4, 3, 1, SLC.asMassager);
 		/*
-		 * 
+		 * 忘记密码页面
 		*/
-	//	ForLaodWindow.forLaodJpanel(1, 0, 0, 0, SLC.showLOLLaod);
-	//	ForLaodWindow.forLaodJpanel(1, 1, 0, 0, SLC.showLOLLaod);
-	//	ForLaodWindow.forLaodJpanel(1, 1, 0, 0, SLC.showLOLLaod);
-		
-    /*    SLC.laodJpanel =	SetJPanel.setJPanelLauout(SLC.laodJpanel, false, 0, 1, 0, forLaodJpanel, SLC.count);
-        SLC.laodJpanel = SetJPanel.setJPanelLauout(SLC.laodJpanel, false, 0, 2, 0, forLaodJpanel, SLC.ciper);
-        SLC.laodJpanel = SetJPanel.setJPanelLauout(SLC.laodJpanel, false, 1, 1, 0, forLaodJpanel, SLC.inputCounter);
-        SLC.laodJpanel = SetJPanel.setJPanelLauout(SLC.laodJpanel, false, 1, 2, 0, forLaodJpanel, SLC.userCiper);
-        SLC.laodJpanel = SetJPanel.setJPanelLauout(SLC.laodJpanel, false, 2, 3, 0, forLaodJpanel, SLC.laod);
-        SLC.laodJpanel = SetJPanel.setJPanelLauout(SLC.laodJpanel, false, 1, 4, 0, forLaodJpanel, SLC.fgc);
-        SLC.laodJpanel = SetJPanel.setJPanelLauout(SLC.laodJpanel, false, 0, 3, 1, forLaodJpanel, SLC.newUser);
-        SLC.laodJpanel = SetJPanel.setJPanelLauout(SLC.laodJpanel, false, 4, 3, 1, forLaodJpanel, SLC.asMassager);
-      SLC.fogetCiperJpanel = SetJPanel.setJPanelLauout(SLC.fogetCiperJpanel ,false,0, 0, 1, forFogetJpanel, SLC.youCount)
-*/        SLC.fogetCiperJpanel = SetJPanel.setJPanelLauout(SLC.fogetCiperJpanel ,false,0, 0, 1, forFogetJpanel, SLC.youCount );
-        SLC.fogetCiperJpanel = SetJPanel.setJPanelLauout(SLC.fogetCiperJpanel ,false,0, 1, 0, forFogetJpanel, SLC.youQuestion );
-        SLC.fogetCiperJpanel = SetJPanel.setJPanelLauout(SLC.fogetCiperJpanel ,false,0, 2, 0, forFogetJpanel, SLC.youAnswer );
-        SLC.fogetCiperJpanel = SetJPanel.setJPanelLauout(SLC.fogetCiperJpanel ,false,2, 3, 1, forFogetJpanel, SLC.backOut );
-        SLC.fogetCiperJpanel = SetJPanel.setJPanelLauout(SLC.fogetCiperJpanel ,false,1, 3, 1, forFogetJpanel, SLC.OK );
-        SLC.fogetCiperJpanel = SetJPanel.setJPanelLauout(SLC.fogetCiperJpanel ,false,1, 2, 1, forFogetJpanel, SLC.youAnserS );
-        SLC.fogetCiperJpanel = SetJPanel.setJPanelLauout(SLC.fogetCiperJpanel ,false,1, 1, 1, forFogetJpanel, SLC.thisYourQuestion);
-        SLC.fogetCiperJpanel = SetJPanel.setJPanelLauout(SLC.fogetCiperJpanel ,false,1, 0, 1, forFogetJpanel, SLC.youCountInput);
-        SLC.fogetCiperJpanel = SetJPanel.setJPanelLauout(SLC.fogetCiperJpanel, true, 2, 0, 0, forFogetJpanel, SLC.checkInputCount);
-        SLC.fogetCiperJpanel = SetJPanel.setJPanelLauout(SLC.fogetCiperJpanel, true, 1, 4, 0, forFogetJpanel, SLC.thisYouFindCiper);
-        SLC.newUserJpanel.add(SLC.newUserJpanelOne,"0");
-        SLC.newUserJpanel.add(SLC.newUserJpanelTwo,"1");
-        forNewUserJpanel.first(SLC.newUserJpanel);
-        SLC.newUserJpanelOne.setLayout(forUserJpanelOne);
-        SLC.newUserJpanelOne = SetJPanel.setJPanelLauout(SLC.newUserJpanelOne, false, 0, 0, 0, forUserJpanelOne, SLC.showLOLNewUser);
-        SLC.newUserJpanelOne = SetJPanel.setJPanelLauout(SLC.newUserJpanelOne, false, 0, 1, 0, forUserJpanelOne, SLC.tellRuler);
-        SLC.newUserJpanelOne = SetJPanel.setJPanelLauout(SLC.newUserJpanelOne, false, 0, 2, 0, forUserJpanelOne, SLC.ciperNewUser);
-        SLC.newUserJpanelOne = SetJPanel.setJPanelLauout(SLC.newUserJpanelOne, false, 0, 3, 0, forUserJpanelOne, SLC.reCiper);
-        SLC.newUserJpanelOne = SetJPanel.setJPanelLauout(SLC.newUserJpanelOne, false, 0, 4, 0, forUserJpanelOne, SLC.tellNameRuler);
-        SLC.newUserJpanelOne = SetJPanel.setJPanelLauout(SLC.newUserJpanelOne, false, 0, 5, 0, forUserJpanelOne, SLC.name);
-        SLC.newUserJpanelOne = SetJPanel.setJPanelLauout(SLC.newUserJpanelOne, false, 0, 6, 0, forUserJpanelOne, SLC.back);
-        SLC.newUserJpanelOne = SetJPanel.setJPanelLauout(SLC.newUserJpanelOne, false, 2, 6, 0, forUserJpanelOne, SLC.goOn);
-        SLC.newUserJpanelOne = SetJPanel.setJPanelLauout(SLC.newUserJpanelOne, true, 1, 2, 0, forUserJpanelOne, SLC.userCiperNewUser);
-        SLC.newUserJpanelOne = SetJPanel.setJPanelLauout(SLC.newUserJpanelOne, true, 1, 3, 0, forUserJpanelOne, SLC.reUserCiperNewUser);
-        SLC.newUserJpanelOne = SetJPanel.setJPanelLauout(SLC.newUserJpanelOne, true, 1, 5, 0, forUserJpanelOne, SLC.userName);
-        /*****
+		ForLaodWindow.forLaodJpanel(2, 0, 0, 1, SLC.youCount);
+		ForLaodWindow.forLaodJpanel(2, 0, 1, 0, SLC.youQuestion);
+		ForLaodWindow.forLaodJpanel(2, 0, 2, 0, SLC.youAnswer );
+		ForLaodWindow.forLaodJpanel(2, 2, 3, 1, SLC.backOut);
+		ForLaodWindow.forLaodJpanel(2, 1, 3, 1, SLC.OK );
+		ForLaodWindow.forLaodJpanel(2, 1, 2, 1, SLC.youAnserS);
+		ForLaodWindow.forLaodJpanel(2, 1, 1, 1, SLC.thisYourQuestion);
+		ForLaodWindow.forLaodJpanel(2, 1, 0, 1, SLC.youCountInput);
+		ForLaodWindow.forLaodJpanel(2, 2, 0, 0, SLC.checkInputCount);
+		ForLaodWindow.forLaodJpanel(2, 1, 4, 0, SLC.thisYouFindCiper);
+		/*
+		 * 注册页面1
+		 */
+		ForLaodWindow.forLaodJpanel(3, 0, 0, 0, SLC.showLOLNewUser);
+		ForLaodWindow.forLaodJpanel(3, 0, 1, 0, SLC.tellRuler);
+		ForLaodWindow.forLaodJpanel(3, 0, 2, 0, SLC.ciperNewUser);
+		ForLaodWindow.forLaodJpanel(3, 0, 3, 0, SLC.reCiper);
+		ForLaodWindow.forLaodJpanel(3, 0, 4, 0, SLC.tellNameRuler);
+		ForLaodWindow.forLaodJpanel(3, 0, 5, 0, SLC.name);
+		ForLaodWindow.forLaodJpanel(3, 0, 6, 0, SLC.back);
+		ForLaodWindow.forLaodJpanel(3, 2, 6, 0, SLC.goOn);
+		ForLaodWindow.forLaodJpanel(3, 1, 2, 0, SLC.userCiperNewUser);
+		ForLaodWindow.forLaodJpanel(3, 1, 3, 0, SLC.reUserCiperNewUser);
+		ForLaodWindow.forLaodJpanel(3, 1, 5, 0, SLC.userName);
+        /*
          * 注册页面二
          */
-        SLC.newUserJpanelTwo  = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, true, 0, 1, 0, forUserJpanelTwo, SLC.tellCiperQuetionRuler);
-        SLC.newUserJpanelTwo = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, false, 0, 2, 0, forUserJpanelTwo, SLC.ciperQuestion);
-        SLC.newUserJpanelTwo = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, false, 1, 2, 0, forUserJpanelTwo, SLC.userQuestion);
-        SLC.newUserJpanelTwo = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, true, 1, 3, 0, forUserJpanelTwo, SLC.tellCiperAnswerRuler);
-        SLC.newUserJpanelTwo = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, false, 0, 4, 0, forUserJpanelTwo, SLC.ciperAnswer);
-        SLC.newUserJpanelTwo = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, true, 1, 4, 0, forUserJpanelTwo, SLC.userAnswer);
-        SLC.newUserJpanelTwo = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, false, 0, 5, 0, forUserJpanelTwo, SLC.reCiperAnswer);
-        SLC.newUserJpanelTwo = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, true, 1, 5, 0, forUserJpanelTwo, SLC.reUserAnswer);
-        SLC.newUserJpanelTwo = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, false, 0, 6, 0, forUserJpanelTwo, SLC.goOnNewUserOne);
-        SLC.newUserJpanelTwo = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, false, 1, 6, 0, forUserJpanelTwo, SLC.finishIt);
-        SLC.newUserJpanelTwo = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, false, 1, 0, 0, forUserJpanelTwo, SLC.tellYourCount);
-        SLC.newUserJpanelTwo = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, true, 1, 2, 0, forUserJpanelTwo, SLC.thisYourCount);
-        SLC.newUserJpanelTwo = SetJPanel.setJPanelLauout(SLC.newUserJpanelTwo, true, 1, 3, 0, forUserJpanelTwo, SLC.returnLaodNewUser);
+		ForLaodWindow.forLaodJpanel(4, 1, 1, 0, SLC.tellCiperQuetionRuler);
+		ForLaodWindow.forLaodJpanel(4, 0, 2, 0, SLC.ciperQuestion);
+		ForLaodWindow.forLaodJpanel(4, 1, 2, 0,SLC.userQuestion);
+		ForLaodWindow.forLaodJpanel(4, 1, 3, 0, SLC.tellCiperAnswerRuler);
+		ForLaodWindow.forLaodJpanel(4, 0, 4, 0, SLC.ciperAnswer);
+		ForLaodWindow.forLaodJpanel(4, 1, 4, 0, SLC.userAnswer);
+		ForLaodWindow.forLaodJpanel(4, 0, 5, 0, SLC.reCiperAnswer);
+		ForLaodWindow.forLaodJpanel(4, 1, 5, 0, SLC.reUserAnswer);
+		ForLaodWindow.forLaodJpanel(4, 0, 6, 0, SLC.goOnNewUserOne);
+		ForLaodWindow.forLaodJpanel(4, 1, 6, 0, SLC.finishIt);
+		ForLaodWindow.forLaodJpanel(4, 1, 0, 0, SLC.tellYourCount);
+		ForLaodWindow.forLaodJpanel(4, 1, 2, 0, SLC.thisYourCount);
+		ForLaodWindow.forLaodJpanel(4, 1, 3, 0, SLC.returnLaodNewUser);
+		/*
+		 * 加入面板
+		 */
         SLC.allJpanel.add(SLC.fogetCiperJpanel,"2");
         SLC.allJpanel.add(SLC.laodJpanel,"0");
 		SLC.allJpanel.add(SLC.newUserJpanel,"1");
-		
+        SLC.newUserJpanel.add(SLC.newUserJpanelOne,"0");
+        SLC.newUserJpanel.add(SLC.newUserJpanelTwo,"1");
 	}
 /*
  * 测试数据
@@ -114,12 +114,14 @@ public static void main(String[] args) {
 }	
 	
 /*
- * 
+ * 获取JFrame用来创建和排版面板
  */
 	public static JFrame getJFrame() {
 		return jf;
 	}
-	
+/*
+ * 获取CardLayout，用来布局
+ */
 	public static CardLayout getCardLayout() {
 		return forAllJpanel;
 	}
@@ -127,7 +129,9 @@ public static void main(String[] args) {
 	public static CardLayout getCardLayout(int i) {
 		return forNewUserJpanel;
 	}
-	
+/*
+ * 获取GridBagLayout用来布局
+ */
 	public static GridBagLayout getGridBagLayout(int oneStandForLoadTwoStandForgetThreeStandNewOneThirdStandlast) {
 		int i = oneStandForLoadTwoStandForgetThreeStandNewOneThirdStandlast;
 		if (i==1)
@@ -139,5 +143,20 @@ public static void main(String[] args) {
 		if(i==4)
 			return forUserJpanelTwo;
 		 return (new GridBagLayout());
+	}
+/*
+ * 获取JPanel用来布局	
+ */
+	public static JPanel getJpanel(int oneStandForLoadTwoStandForgetThreeStandNewOneThirdStandlast) {
+		int i = oneStandForLoadTwoStandForgetThreeStandNewOneThirdStandlast;
+		if (i==1)
+			return SLC.laodJpanel;
+		if(i==2)
+			return SLC.fogetCiperJpanel;
+		if(i==3)
+			return SLC.newUserJpanelOne;
+		if(i==4)
+			return SLC.newUserJpanelTwo;
+		 return (new JPanel());
 	}
 }

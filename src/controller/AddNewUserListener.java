@@ -17,7 +17,9 @@ import bean.SMFL;
 import util.CheckMassager;
 import util.ForCheckAtLoad;
 import view.LaodWindows;
-
+/*
+ * 进行数据检查
+ */
 public class AddNewUserListener {
 	private AddNewUserListener(){}
 	/*

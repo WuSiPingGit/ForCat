@@ -106,6 +106,8 @@ public class SLC{
 		tellNameRuler = SetWord.setLabel(tellNameRuler, Color.darkGray, Color.blue, new Font("宋体",Font.PLAIN, 10));
 		thisYouFindCiper = SetWord.setLabel(thisYouFindCiper, Color.GREEN, Color.green, new Font("宋体",Font.PLAIN,18));
 		thisYourCount = SetWord.setLabel(thisYouFindCiper, Color.GREEN, Color.green, new Font("宋体",Font.PLAIN,18));
+		tellYourCount = SetWord.setLabel(tellYourCount, Color.RED, Color.green, new Font("宋体",Font.PLAIN,20));
+		tellYourCount.setVisible(false);
 		thisYouFindCiper.setVisible(false);
 		thisYourCount.setVisible(false);
 		returnLaod.setVisible(false);

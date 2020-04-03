@@ -15,7 +15,9 @@ import bean.SLC;
 import bean.SMFL;
 import util.CheckMassager;
 import view.LaodWindows;;
-
+/*
+ * Ê×Ò³¼àÌýÆ÷
+ */
 public class AddLaodListener {
 	public AddLaodListener() {}
 	/*

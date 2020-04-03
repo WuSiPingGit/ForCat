@@ -19,7 +19,9 @@ public class SetJPanel {
 			jp.setLayout(new CardLayout());
 		return jp;
 	}
-	
+	/*
+	 * 排版面板
+	 */
 	public static<T> JPanel setJPanelLauout(JPanel jp, boolean finalComponent, int x, int y, int insert, GridBagLayout gbl, T comment) {
 	GridBagConstraints cons =SetGridBagStand.CreateGridBagConstraints(x, y, insert);
 	if (finalComponent) {
@@ -29,6 +31,10 @@ public class SetJPanel {
 	jp.add((Component) comment);
 	return jp;
 }
+	
+	/*
+	 * 创建面板，未用将用在主程序
+	 */
 	
 	public static JPanel addJPaneJButton(JPanel jp, JButton jb) {
 		jp.add(jb);

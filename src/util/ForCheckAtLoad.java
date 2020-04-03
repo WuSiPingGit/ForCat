@@ -1,7 +1,9 @@
 package util;
 
 import bean.SMFL;
-
+/*
+ * 调用数据检查
+ */
 public class ForCheckAtLoad {
 	private ForCheckAtLoad(){}
 	public static void forCiperCheck() {

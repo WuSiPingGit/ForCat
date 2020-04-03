@@ -3,10 +3,12 @@ package util;
 import java.util.Random;
 
 import javax.xml.stream.events.StartDocument;
-
+/*
+ * 获取随机数用来加密数据
+ */
 public class GetRamomMath {
 	private GetRamomMath() {}
-	 
+	//保证数据为满足要求
 	public static int  GetRamdom(int start, int end, boolean canDoubleMath) {
 		Random r =new Random(System.currentTimeMillis());
 		int checkReturn = -1;

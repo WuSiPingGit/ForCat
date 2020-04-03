@@ -1,6 +1,9 @@
 package util;
 
 import java.awt.GridLayout;
+/*
+ * 建立窗口模块
+ */
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -10,7 +13,9 @@ import javax.swing.JTextField;
 
 public class SetJFrame {
 	private  SetJFrame() {}
-	
+	/*
+	 * 主模块
+	 */
 	public static JFrame setJFrame(JFrame jf, String title, int weight, int length, boolean change, boolean exitNoAsk){
 		jf.setBounds(200, 200, weight, length);
 		if(exitNoAsk)
@@ -21,6 +26,10 @@ public class SetJFrame {
 		jf.setVisible(true);
 		return jf;
 	}
+	
+	/*
+	 * 给主程序，调用模块时加东西，还未确定要加什么
+	 */
 	
 	public static JFrame setJFrameJPanel(JFrame jf, JPanel jp) {
 		jf.add(jp);

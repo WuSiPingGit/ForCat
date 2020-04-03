@@ -1,5 +1,7 @@
 package util;
-
+/*
+ * 获取 GridBagConstraints用来给面板布局
+ */
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 public class SetGridBagStand {

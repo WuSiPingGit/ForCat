@@ -48,7 +48,7 @@ public class MakeCiperSafe {
 		return newString;
 	}
 /*
- * 反编码
+ * 反编码，解码数据
  */
     public static String getTrueCiper() {
     	String newString;

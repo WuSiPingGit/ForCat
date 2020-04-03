@@ -1,7 +1,9 @@
 package util;
 
 import org.omg.CORBA.FloatSeqHelper;
-
+/*
+ * 进行数据检查的俩种方法
+ */
 
 
 public class CheckMassager {
