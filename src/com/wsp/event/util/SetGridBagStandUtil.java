@@ -1,6 +1,5 @@
 package com.wsp.event.util;
 /**
- * 
  * 获取 GridBagConstraints用来给面板布局
  */
 import java.awt.GridBagConstraints;
@@ -11,6 +10,15 @@ public class SetGridBagStandUtil {
 	private final int  two = 2;
 	private final int six = 6;
     public SetGridBagStandUtil(){}
+    /**
+     * 位置
+     * @param x
+     * @param y
+     * 是否有间隙
+     * @param z
+     * 返回布局器的constraints
+     * @return
+     */
 	public GridBagConstraints CreateGridBagConstraints(int x, int y,int z){
 		GridBagConstraints cons = new GridBagConstraints();
 		if(z!=zone)
@@ -19,7 +27,17 @@ public class SetGridBagStandUtil {
 		cons.gridy = y;
 		return  cons;
 	}
-	
+	/**
+	 * 位置
+	 * @param x
+	 * @param y
+	 * 是否有间隙且可变
+	 * @param z
+	 * 是否大小可变
+	 * @param hasAdd
+	 * 返回布局器的Constraints
+	 * @return
+	 */
 	public GridBagConstraints CreateGridBagConstraints(int x, int y,int z, boolean hasAdd){
 		GridBagConstraints cons = new GridBagConstraints();
 		if(z!=zone) {

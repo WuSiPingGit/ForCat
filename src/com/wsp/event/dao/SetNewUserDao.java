@@ -1,16 +1,17 @@
 package com.wsp.event.dao;
 
 import com.wsp.event.entity.LoadUser;
+
 /**
- * 获取新账号
+ * 建立新用户
  * @author WSP
  */
-public interface GetNewCountFromSql {
+public interface SetNewUserDao {
 	/**
 	 * 用户信息
 	 * @param loadUser
-	 * 账号
+	 * 返回账号
 	 * @return
 	 */
-	int getNewCountFromSql(LoadUser loadUser);
+	int setNewUser(LoadUser loadUser);
 }

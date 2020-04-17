@@ -1,38 +1,42 @@
 package com.wsp.event.dao.impl;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-
-import com.wsp.event.common.ForMysqlName;
-import com.wsp.event.common.MysqlLanguage;
+import com.wsp.event.common.ForMysqlNameCommon;
+import com.wsp.event.common.MysqlLanguageCommon;
 import com.wsp.event.dao.GetNewCountFromSql;
 import com.wsp.event.entity.LoadUser;
-import com.wsp.event.util.CollecteMysqlUtil;
-
+import com.wsp.event.util.GetPreparenStatementUtil;
+/**
+ * 获取新账号
+ * @author WSP
+ */
 public class GetNewCountFromSqlImpl implements GetNewCountFromSql{
+	private MysqlLanguageCommon mysqlLanguageCommon = new MysqlLanguageCommon();
+	private ForMysqlNameCommon forMysqlNameCommon = new ForMysqlNameCommon();
+	private GetPreparenStatementUtil getPs = new GetPreparenStatementUtil();
+	private GetPreparenStatementUtil getPsOne = new GetPreparenStatementUtil();
+	private PreparedStatement preparedStatement = null;
+	private PreparedStatement st = null;
+	private ResultSet resultSet = null;
+	/**
+	 * 输入账户信息
+	 * 返回账号
+	 */
 	public int getNewCountFromSql(LoadUser loadUser) {
-		MysqlLanguage mysqlLanguage = new MysqlLanguage();
-		ForMysqlName forMysqlName = new ForMysqlName();
-		Connection conn = CollecteMysqlUtil.getConnection();
-		PreparedStatement preparedStatement = null;
-		Statement st = null;
-		ResultSet resultSet = null;
-		if (conn !=null) {
 			try {
-				preparedStatement = conn.prepareStatement(mysqlLanguage.getInsert());
-				st = conn.createStatement();
-				preparedStatement.setString(forMysqlName.getOne(), loadUser.getName());
-				preparedStatement.setString(forMysqlName.getTwo(), loadUser.getUserCiper());
-				preparedStatement.setDate(forMysqlName.getThree(), loadUser.getUserDate());
-				preparedStatement.setString(forMysqlName.getFour(), loadUser.getUserQuestion());
-				preparedStatement.setString(forMysqlName.getFiva(), loadUser.getUserAnswer());
+				preparedStatement = getPs.getPreparedStatement(mysqlLanguageCommon.getInsert());
+				preparedStatement.setString(forMysqlNameCommon.getOne(), loadUser.getName());
+				preparedStatement.setString(forMysqlNameCommon.getTwo(), loadUser.getUserCiper());
+				preparedStatement.setDate(forMysqlNameCommon.getThree(), loadUser.getUserDate());
+				preparedStatement.setString(forMysqlNameCommon.getFour(), loadUser.getUserQuestion());
+				preparedStatement.setString(forMysqlNameCommon.getFiva(), loadUser.getUserAnswer());
 				if (preparedStatement.executeUpdate()>0) {
-					resultSet = st.executeQuery(mysqlLanguage.getSelectMax());
+					st = getPsOne.getPreparedStatement(mysqlLanguageCommon.getSelectMax());
+					resultSet = st.executeQuery();
 					if (resultSet.next()) {
-						int id = resultSet.getInt(new ForMysqlName().getOne());
+						int id = resultSet.getInt(new ForMysqlNameCommon().getOne());
 						if (preparedStatement!=null) {
 							preparedStatement.close();
 						}
@@ -59,7 +63,12 @@ public class GetNewCountFromSqlImpl implements GetNewCountFromSql{
 					}
 				}
 			}
-		}
+			if (getPs!=null) {
+				getPs.getLinkMysqlDao().closeConnection(getPs.getConn());
+			}
+			if (getPsOne.getConn()!=null) {
+				getPsOne.getLinkMysqlDao().closeConnection(getPsOne.getConn());
+			}
 		return 0;
 	}
 }

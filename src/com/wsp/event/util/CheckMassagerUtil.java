@@ -4,7 +4,6 @@ import org.omg.CORBA.FloatSeqHelper;
 /**
  * 进行数据检查、校验
  * @author WSP
- * @Date 2020年4月5日
  */
 public class CheckMassagerUtil {
 	private CheckMassagerUtil() {}

@@ -4,20 +4,27 @@ import java.sql.Date;
 
 import com.wsp.event.entity.LoadUser;
 import com.wsp.event.util.MakeCiperSafeUtil;
-import com.wsp.event.view.LoadComposement;
+import com.wsp.event.view.LoadComposementView;
 /**
- * 
+ * 写入user信息
  * @author WSP
- * @Date 2020年4月7日
  */
 public class SetNewUser {
 	private LoadUser loadUser;
-	LoadComposement lc;
-	public SetNewUser(LoadUser loadUser, LoadComposement lc) {
+	LoadComposementView lc;
+	/**
+	 * 存放user信息
+	 * @param loadUser 
+	 * 读取内容、写入user
+	 * @param lc
+	 */
+	public SetNewUser(LoadUser loadUser, LoadComposementView lc) {
 		this.loadUser = loadUser;
 		this.lc = lc;
 	}
-	
+	/**
+	 * @return user
+	 */
 	public LoadUser setNewUser() {
 		String ciper = lc.userCiperNewUser.getText();
 		MakeCiperSafeUtil makeCiperSafeUtil = new MakeCiperSafeUtil();

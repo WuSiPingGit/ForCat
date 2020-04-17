@@ -1,22 +1,27 @@
 package com.wsp.event.util;
 
 import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-/*
- * 建立窗口模块
- */
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-
+/**
+ * 对窗口进行基础设置
+ * @author WSP
+ */
 public class SetJFrameUtil {
 	private  SetJFrameUtil() {}
-	/*
-	 * 主模块
+	/**
+	 * 窗口
+	 * @param jf
+	 * 标题
+	 * @param title
+	 * 大小
+	 * @param weight
+	 * @param length
+	 * 是否可变
+	 * @param change
+	 * 是否可以直接退出
+	 * @param exitNoAsk
+	 * 窗口
+	 * @return
 	 */
 	public static JFrame setJFrame(JFrame jf, String title, int weight, int length, boolean change, boolean exitNoAsk){
 		jf.setSize(weight, length);

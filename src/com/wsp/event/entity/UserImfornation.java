@@ -9,7 +9,7 @@ import java.io.InputStream;
 public class UserImfornation {
 	private int id;
 	private boolean isVip;
-	private int money;
+	private float money;
 	private String myTeam;
 	private InputStream pic;
 	public int getId() {
@@ -24,10 +24,10 @@ public class UserImfornation {
 	public void setIsVip(boolean isVip) {
 		this.isVip = isVip;
 	}
-	public int getMoney() {
+	public float getMoney() {
 		return money;
 	}
-	public void setMoney(int money) {
+	public void setMoney(float money) {
 		this.money = money;
 	}
 	public String getMyTeam() {

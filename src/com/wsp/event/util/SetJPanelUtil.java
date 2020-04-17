@@ -8,6 +8,23 @@ import javax.swing.JPanel;
  */
 public class SetJPanelUtil {
 	public  SetJPanelUtil() {}
+	/**
+	 * 面板
+	 * @param jp
+	 * 是否为最后
+	 * @param finalComponent
+	 * 位置
+	 * @param x
+	 * @param y
+	 * 空隙
+	 * @param insert
+	 * 布局器
+	 * @param gbl
+	 * 组件
+	 * @param comment
+	 * 加入组件后的JPanel
+	 * @return
+	 */
 	public <T> JPanel setJPanelLauout(JPanel jp, boolean finalComponent, int x, 
 			int y, int insert, GridBagLayout gbl, T comment) {
 		SetGridBagStandUtil setGridBagStandUtil = new SetGridBagStandUtil();
@@ -19,7 +36,26 @@ public class SetJPanelUtil {
 	jp.add((Component) comment);
 	return jp;
 	}	
-
+	/**
+	 * 
+	 * 面板
+	 * @param jp
+	 * 是否为最后
+	 * @param finalComponent
+	 * 位置
+	 * @param x
+	 * @param y
+	 * 空隙
+	 * @param insert
+	 * 布局器
+	 * @param gbl
+	 * 组件
+	 * @param comment
+	 * 可变大小
+	 * @param hasAdd
+	 * 加入组件后JPanel
+	 * @return
+	 */
 	public <T> JPanel setJPanelLauout(JPanel jp, boolean finalComponent, int x, 
 			int y, int insert, GridBagLayout gbl, T comment, boolean hasAdd) {
 		SetGridBagStandUtil setGridBagStandUtil = new SetGridBagStandUtil();

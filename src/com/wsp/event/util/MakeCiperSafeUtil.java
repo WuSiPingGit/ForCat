@@ -12,6 +12,12 @@ public class MakeCiperSafeUtil {
      * 第一个随机数用来改变第一个字母（如果有），第二个用来加密其他单数，第三个加密双数；
      *最前和最后的俩个数字记录随机数；
      */
+    /**
+     * 密码
+     * @param saveCiper
+     * 加密后的密码
+     * @return
+     */
     public String changeCiper(String saveCiper) {
     	String newString;																		
     	final int START = 2;
@@ -43,8 +49,11 @@ public class MakeCiperSafeUtil {
     	newString = first+newString+third+second;	
 		return newString;
 	}
-/*
- * 反编码，解码数据
+/**
+ * 加密后的密码
+ * @param changeCiper
+ * 密码
+ * @return
  */
     public String getTrueCiper(String changeCiper) {
     	String newString;

@@ -8,6 +8,7 @@ public class MatchImformation {
 	private String matchTeamTwo;
 	private String detailLocation;
 	private Date matchTime;
+	private float money;
 	private int matchAllTrick;
 	private int matchHasTrick;
 	private String otherImfortion;
@@ -65,5 +66,11 @@ public class MatchImformation {
 	}
 	public void setMatvhTakeHot(boolean matvhTakeHot) {
 		this.matvhTakeHot = matvhTakeHot;
+	}
+	public float getMoney() {
+		return money;
+	}
+	public void setMoney(float money) {
+		this.money = money;
 	}
 }
